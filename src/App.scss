@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+
+.App,
+.wrapper {
+  display: flex;
+}
+.components-contain {
+  position: relative;
+}
+.App {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  background-image: url(/images/noise.png);
+  .contain {
+    transform: translateX(1000px);
+    h1 {
+      transform: translateX(-220px);
+      margin-bottom: 50px;
+      font-size: 48px;
+      color: #d9b611;
+      text-decoration: underline;
+    }
+  }
+  // .card-slider. {
+  //   background-color: red;
+  // }
+  .contain {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper {
+    transform-style: preserve-3d;
+    perspective: 3000px;
+    transition: transform 1000ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    .card {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 400px;
+      width: 400px;
+      border-radius: 10px;
+      opacity: 0.5;
+      transform-style: preserve-3d;
+      transform-origin: bottom;
+      transform: rotateX(50deg) scale(0.9);
+      transition: opacity 700ms ease-in,
+        transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      z-index: 100;
+    }
+    .card.active {
+      z-index: 300;
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+  }
+}
+
+.buttons {
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  width: 400px; //! should be same as card
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 30px;
+  color: #d9b611;
+  position: relative;
+  padding: 20px;
+  // transform: translateY(350px);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1400px) {
+  .App {
+    .contain {
+      transform: translateX(750px);
+      h1 {
+        transform: translateX(-210px);
+        margin-bottom: 80px;
+        font-size: 40px;
+      }
+    }
+    .wrapper {
+      .card {
+        height: 300px;
+        width: 300px;
+      }
+    }
+    .buttons {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .App {
+    .contain {
+      transform: translateX(670px);
+      h1 {
+        transform: translateX(-210px);
+        margin-bottom: 80px;
+        font-size: 36px;
+      }
+    }
+    .wrapper {
+      .card {
+        height: 270px;
+        width: 270px;
+      }
+    }
+    .buttons {
+      width: 270px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    .contain {
+      transform: translateX(580px);
+      h1 {
+        transform: translateX(-165px);
+        margin-bottom: 80px;
+        font-size: 28px;
+      }
+    }
+    .wrapper {
+      .card {
+        height: 230px;
+        width: 230px;
+      }
+    }
+    .buttons {
+      width: 230px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .App {
+    .contain {
+      transform: translateX(580px);
+      h1 {
+        transform: translateX(-110px);
+        margin-bottom: 80px;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    .contain {
+      transform: translateX(500px);
+      h1 {
+        transform: translateX(-100px);
+        margin-bottom: 80px;
+        font-size: 20px;
+      }
+    }
+    .wrapper {
+      .card {
+        height: 200px;
+        width: 200px;
+      }
+    }
+    .buttons {
+      width: 200px;
+      font-size: 25px;
+    }
+  }
+}
+@media (max-width: 380px) {
+  .App {
+    .contain {
+      transform: translateX(500px);
+      h1 {
+        transform: translateX(-60px);
+        margin-bottom: 80px;
+        font-size: 16px;
+        word-break: normal;
+      }
+    }
+    .wrapper {
+      .card {
+        height: 200px;
+        width: 200px;
+      }
+    }
+    .buttons {
+      width: 200px;
+      font-size: 25px;
+    }
+  }
+}
