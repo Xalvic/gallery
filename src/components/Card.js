@@ -23,16 +23,16 @@ function Card() {
       <div className={`card-slider active-slide-${current}`}>
         <div
           className='wrapper'
-          style={{
-            transform: `translateX(-${current * (100 / length)}%)`,
-          }}
+          // style={{
+          //   transform: `translateX(-${current * (100 / length)}%)`,
+          // }}
         >
           {data.map((s, i) => (
             <div
               key={s._id}
               className={i === current ? "card active" : "card"}
               style={{
-                "background-image": `url(${s.imgsrc})`,
+                backgroundImage: `url(${s.imgsrc})`,
               }}
             ></div>
           ))}

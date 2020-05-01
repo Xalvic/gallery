@@ -10,11 +10,11 @@
 .App {
   min-height: 100vh;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background: #333;
   background-image: url(/images/noise.png);
   .contain {
-    transform: translateX(1000px);
+    transform: translateX(-100px) translateY(-200px);
     h1 {
       transform: translateX(-220px);
       margin-bottom: 50px;
@@ -36,6 +36,7 @@
     transition: transform 1000ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
     .card {
+      position: absolute;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -59,6 +60,7 @@
 }
 
 .buttons {
+  top: 390px;
   user-select: none;
   display: flex;
   justify-content: space-between;
@@ -77,7 +79,7 @@
 @media (max-width: 1400px) {
   .App {
     .contain {
-      transform: translateX(750px);
+      transform: translateX(100px) translateY(-100px);
       h1 {
         transform: translateX(-210px);
         margin-bottom: 80px;
@@ -99,7 +101,7 @@
 @media (max-width: 800px) {
   .App {
     .contain {
-      transform: translateX(670px);
+      transform: translateX(270px) translateY(-100px);
       h1 {
         transform: translateX(-210px);
         margin-bottom: 80px;
@@ -121,7 +123,7 @@
 @media (max-width: 600px) {
   .App {
     .contain {
-      transform: translateX(580px);
+      transform: translateX(60px) translateY(-100px);
       h1 {
         transform: translateX(-165px);
         margin-bottom: 80px;
@@ -136,17 +138,22 @@
     }
     .buttons {
       width: 230px;
+      top: 270px;
     }
   }
 }
 @media (max-width: 600px) {
   .App {
     .contain {
-      transform: translateX(580px);
+      // transform: translateX(580px);
       h1 {
         transform: translateX(-110px);
         margin-bottom: 80px;
         font-size: 22px;
+      }
+      .buttons {
+        width: 230px;
+        top: 240px;
       }
     }
   }
@@ -155,7 +162,7 @@
 @media (max-width: 480px) {
   .App {
     .contain {
-      transform: translateX(500px);
+      transform: translateX(120px) translateY(-100px);
       h1 {
         transform: translateX(-100px);
         margin-bottom: 80px;
@@ -171,17 +178,18 @@
     .buttons {
       width: 200px;
       font-size: 25px;
+      top: 200px;
     }
   }
 }
 @media (max-width: 380px) {
   .App {
     .contain {
-      transform: translateX(500px);
+      transform: translateX(30px) translateY(-100px);
       h1 {
         transform: translateX(-60px);
         margin-bottom: 80px;
-        font-size: 16px;
+        font-size: 13px;
         word-break: normal;
       }
     }
