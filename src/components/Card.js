@@ -19,7 +19,7 @@ function Card() {
 
   return (
     <div className='contain'>
-      <h1>An image carousel in react from scratch.</h1>
+      <h1>Test image carousel using react from scratch.</h1>
       <div className={`card-slider active-slide-${current}`}>
         <div
           className='wrapper'
