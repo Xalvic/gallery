@@ -33,6 +33,6 @@ export default [
     _id: 6,
     title: "First_six",
     genre: "something",
-    imgsrc: "/images/ok.jpg",
+    imgsrc: "/images/d.jpg",
   },
 ];
