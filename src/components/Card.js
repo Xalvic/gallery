@@ -42,11 +42,12 @@ function Card() {
     //     this.el.classList.remove("loading");
     //   },
     // },
-    // breakpoints: {
-    //   1023: {
-    //     slidesPerView: 1,
-    //   },
-    // },
+    breakpoints: {
+      1000: {
+        slidesPerView: 1,
+        grabCursor: true,
+      },
+    },
   };
 
   return (
@@ -64,9 +65,9 @@ function Card() {
               <p
                 className='title'
                 data-swiper-parallax='-60%'
-                data-swiper-parallax-scale='.7'
+                data-swiper-parallax-scale='.2'
               >
-                {s.title}
+                Signature
               </p>
             </div>
           </div>

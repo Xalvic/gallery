@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
 %transition_all_03s {
   transition: all 0.3s ease;
@@ -64,6 +65,9 @@
 }
 
 .swiper-slide {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -93,13 +97,11 @@
   }
   .content {
     position: absolute;
-    top: 80%;
-    left: 80%;
-    // width: 50%;
-    color: rgb(65, 65, 65);
+    align-self: center;
+    color: rgb(238, 238, 238);
     .title {
+      font-family: "Cedarville Cursive", cursive;
       font-size: 2.6em;
-      font-weight: bold;
       margin-bottom: 30px;
     }
   }
@@ -369,6 +371,10 @@
   }
 }
 @media only screen and (max-width: 800px) {
+  #cursor-dot,
+  #cursor-dot-outline {
+    display: none;
+  }
   .swipper {
     width: 800px;
   }

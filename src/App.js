@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Cursor />
+        <Cursor id='curse' />
         <Switch>
           <Route path='/' exact component={Main} />
           <Route path='/components/Card' exact id='all-card' component={Card} />
