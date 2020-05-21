@@ -1,47 +1,78 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import Swiper from "react-id-swiper";
 import data from "./data";
+import "swiper/css/swiper.min.css";
 
 function Card() {
-  const [current, setCurrent] = useState(0);
-  const { length } = data;
-
-  const goToNext = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+  const params = {
+    // init: false,
+    loop: true,
+    speed: 800,
+    slidesPerView: 2,
+    centeredSlides: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 50, // Slide rotate in degrees
+      stretch: 0, // Stretch space between slides (in px)
+      depth: 100, // Depth offset in px (slides translate in Z axis)
+      modifier: 1, // Effect multipler
+      slideShadows: true, // Enables slides shadows
+    },
+    // renderPrevButton: () => <button className='swiper-button-pre'>Prev</button>,
+    // renderNextButton: () => <button className='swiper-button-nex'>Next</button>,
+    spaceBetween: 30,
+    containerClass: "customized-swiper-container",
+    // grabCursor: true,
+    mousewheelControl: true,
+    parallax: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      // renderBullet: function (index, className) {
+      //   return '<span class="' + className + '">' + (index + 1) + "</span>";
+      // },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next.next",
+      prevEl: ".swiper-button-prev.prev",
+    },
+    // Events
+    // on: {
+    //   imagesReady: function () {
+    //     this.el.classList.remove("loading");
+    //   },
+    // },
+    // breakpoints: {
+    //   1023: {
+    //     slidesPerView: 1,
+    //   },
+    // },
   };
-  const goToPrev = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  if (!Array.isArray(data) || length <= 0) {
-    return null;
-  }
 
   return (
-    <div className='contain'>
-      <h1>Test image carousel using react from scratch.</h1>
-      <div className={`card-slider active-slide-${current}`}>
-        <div
-          className='wrapper'
-          // style={{
-          //   transform: `translateX(-${current * (100 / length)}%)`,
-          // }}
-        >
-          {data.map((s, i) => (
-            <div
-              key={s._id}
-              className={i === current ? "card active" : "card"}
-              style={{
-                backgroundImage: `url(${s.imgsrc})`,
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
-      <div className='buttons'>
-        <h5 onClick={goToPrev}>Previous</h5>
-        <h5 onClick={goToNext}>Next</h5>
-      </div>
+    <div className='swipper'>
+      <Swiper {...params} className='customized-swiper-container loading'>
+        {data.map((s) => (
+          <div
+            key={s._id}
+            className='swiper-slide'
+            style={{
+              backgroundImage: `url(${s.imgsrc})`,
+            }}
+          >
+            <div className='content'>
+              <p
+                class='title'
+                data-swiper-parallax='-60%'
+                data-swiper-parallax-scale='.7'
+              >
+                {s.title}
+              </p>
+            </div>
+          </div>
+        ))}
+      </Swiper>
+      {/* <div className='lol'>a</div> */}
     </div>
   );
 }
