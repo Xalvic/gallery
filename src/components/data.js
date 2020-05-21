@@ -30,9 +30,33 @@ export default [
     imgsrc: "/images/e.jpg",
   },
   {
-    _id: 6,
+    _id: 7,
     title: "First_six",
     genre: "something",
-    imgsrc: "/images/d.jpg",
+    imgsrc: "/images/f.jpg",
+  },
+  {
+    _id: 8,
+    title: "First_six",
+    genre: "something",
+    imgsrc: "/images/g.jpg",
+  },
+  {
+    _id: 9,
+    title: "First_six",
+    genre: "something",
+    imgsrc: "/images/h.jpg",
+  },
+  {
+    _id: 10,
+    title: "First_six",
+    genre: "something",
+    imgsrc: "/images/i.jpg",
+  },
+  {
+    _id: 11,
+    title: "First_six",
+    genre: "something",
+    imgsrc: "/images/j.jpg",
   },
 ];

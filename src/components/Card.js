@@ -16,7 +16,7 @@ function Card() {
       stretch: 0, // Stretch space between slides (in px)
       depth: 100, // Depth offset in px (slides translate in Z axis)
       modifier: 1, // Effect multipler
-      slideShadows: true, // Enables slides shadows
+      slideShadows: false, // Enables slides shadows
     },
     // renderPrevButton: () => <button className='swiper-button-pre'>Prev</button>,
     // renderNextButton: () => <button className='swiper-button-nex'>Next</button>,
@@ -62,7 +62,7 @@ function Card() {
           >
             <div className='content'>
               <p
-                class='title'
+                className='title'
                 data-swiper-parallax='-60%'
                 data-swiper-parallax-scale='.7'
               >

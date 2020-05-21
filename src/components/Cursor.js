@@ -27,14 +27,14 @@ const Cursor = () => {
     cursorVisible.current = false;
     toggleCursorVisibility();
   };
-  //   const onMouseDown = () => {
-  //     cursorEnlarged.current = true;
-  //     toggleCursorSize();
-  //   };
-  //   const onMouseUp = () => {
-  //     cursorEnlarged.current = false;
-  //     toggleCursorSize();
-  //   };
+  const onMouseDown = () => {
+    cursorEnlarged.current = true;
+    toggleCursorSize();
+  };
+  const onMouseUp = () => {
+    cursorEnlarged.current = false;
+    toggleCursorSize();
+  };
   const onResize = (event) => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
@@ -47,20 +47,21 @@ const Cursor = () => {
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseenter", onMouseEnter);
     document.addEventListener("mouseleave", onMouseLeave);
-    // document.addEventListener("mousedown", onMouseDown);
-    // document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("mouseup", onMouseUp);
     window.addEventListener("resize", onResize);
     requestRef.current = requestAnimationFrame(animateDotOutline);
 
     // Handle Link Hovers
+    lol();
     handleLinkHovers();
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseenter", onMouseEnter);
       document.removeEventListener("mouseleave", onMouseLeave);
-      //   document.removeEventListener("mousedown", onMouseDown);
-      //   document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("mouseup", onMouseUp);
       window.removeEventListener("resize", onResize);
       cancelAnimationFrame(requestRef.current);
     };
@@ -92,9 +93,14 @@ const Cursor = () => {
     if (cursorVisible.current) {
       cursorDot.current.style.opacity = 1;
       cursorDotOutline.current.style.opacity = 1;
+      cursorDotOutline.current.style.transform =
+        "translate(-50%, -50%) scale(6)";
+      cursorDotOutline.current.style.backdropFilter = "blur(1px)";
     } else {
       cursorDot.current.style.opacity = 0;
       cursorDotOutline.current.style.opacity = 0;
+      cursorDotOutline.current.style.transform =
+        "translate(-50%, -50%) scale(6)";
     }
   }
 
@@ -106,13 +112,15 @@ const Cursor = () => {
       cursorDot.current.style.transform = "translate(-50%, -50%) scale(0.1)";
       cursorDotOutline.current.style.transform =
         "translate(-50%, -50%) scale(3.5)";
+      cursorDotOutline.current.style.transform =
+        "translate(-50%, -50%) scale(3.5)";
+      cursorDotOutline.current.style.backdropFilter = "blur(1px)";
       cursorDotOutline.current.style.backgroundColor = "#000";
     } else {
       cursorDot.current.style.transform = "translate(-50%, -50%) scale(1)";
       cursorDotOutline.current.style.transform =
         "translate(-50%, -50%) scale(1)";
-      cursorDotOutline.current.style.backgroundColor =
-        "rgba(139, 139, 139, 0.836)";
+      cursorDotOutline.current.style.backgroundColor = "transparent";
     }
   }
 
@@ -130,6 +138,18 @@ const Cursor = () => {
       el.addEventListener("mouseout", () => {
         cursorEnlarged.current = false;
         toggleCursorSize();
+      });
+    });
+  }
+  function lol() {
+    document.querySelectorAll("swiper-slide").forEach((el) => {
+      el.addEventListener("mouseover", () => {
+        cursorVisible.current = true;
+        toggleCursorVisibility();
+      });
+      el.addEventListener("mouseout", () => {
+        cursorVisible.current = false;
+        toggleCursorVisibility();
       });
     });
   }
