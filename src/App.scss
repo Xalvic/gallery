@@ -225,7 +225,7 @@
     letter-spacing: 5px;
     margin-bottom: 20px;
     p {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     .art {
       -webkit-animation: squiggly-anim 0.34s linear infinite;
@@ -381,6 +381,11 @@
 @media only screen and (max-width: 600px) {
   .swipper {
     width: 600px;
+  }
+  .Main {
+    .head {
+      font-size: 50px;
+    }
   }
   .customized-swiper-container {
     height: 90vw;
