@@ -22,8 +22,10 @@ function Card() {
     // renderNextButton: () => <button className='swiper-button-nex'>Next</button>,
     spaceBetween: 30,
     containerClass: "customized-swiper-container",
-    // grabCursor: true,
+    grabCursor: true,
     mousewheelControl: true,
+    freeMode: true,
+    freeModeSticky: true,
     parallax: true,
     pagination: {
       el: ".swiper-pagination",
@@ -42,12 +44,16 @@ function Card() {
     //     this.el.classList.remove("loading");
     //   },
     // },
-    breakpoints: {
-      1000: {
-        slidesPerView: 1,
-        grabCursor: true,
-      },
-    },
+    // breakpoints: {
+    //   1000: {
+    //     slidesPerView: 2,
+    //     grabCursor: true,
+    //     direction: "vertical",
+    //     mousewheelControl: true,
+    //     slidesPerView: 1,
+    //     freeMode: true,
+    //   },
+    // },
   };
 
   return (
